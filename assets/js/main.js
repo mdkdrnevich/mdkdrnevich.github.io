@@ -9,8 +9,8 @@
   });
 })();
 
-// Background: particles advected along a smooth, slowly evolving flow field.
-// A quiet visual nod to normalizing flows. Disabled for reduced-motion users.
+// Banner: particles advected along a smooth, slowly evolving flow field.
+// A quiet visual nod to normalizing flows. Static for reduced-motion users.
 (function () {
   var canvas = document.getElementById('field');
   var ctx = canvas.getContext('2d');
@@ -23,10 +23,11 @@
   }
 
   function resize() {
-    W = window.innerWidth; H = window.innerHeight;
+    var r = canvas.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height;
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var n = Math.round(Math.min(220, (W * H) / 9000));
+    var n = Math.round(Math.min(260, (W * H) / 900));
     particles = [];
     for (var i = 0; i < n; i++) particles.push(spawn());
   }
@@ -35,16 +36,22 @@
     return { x: Math.random() * W, y: Math.random() * H, age: Math.random() * 400, life: 300 + Math.random() * 300 };
   }
 
-  // Divergence-free velocity from the curl of a sum-of-sines stream function.
+  // Divergence-free velocity: u = (dpsi/dy, -dpsi/dx) for a sum-of-sines stream function psi.
   function velocity(x, y) {
-    var s = 0.0028, a = t * 0.00025;
+    var s = 0.012, a = t * 0.0015;
     var dpsidy = Math.cos(y * s + a) * 1.0 + Math.cos((x + y) * s * 0.7 - a) * 0.6;
     var dpsidx = Math.cos(x * s * 0.8 - a * 1.3) * 0.9 + Math.cos((x + y) * s * 0.7 - a) * 0.6;
-    return [dpsidy * 0.55, -dpsidx * 0.55];
+    return [dpsidy * 0.9, -dpsidx * 0.9];
   }
 
+  // Each frame fades what's already drawn a little, then adds a short segment per
+  // particle, so the trails trace out streamlines of the flow.
   function draw(rgb) {
-    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.045)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.lineWidth = 1.1;
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       var v = velocity(p.x, p.y);
@@ -53,11 +60,10 @@
       if (p.age > p.life || p.x < -10 || p.x > W + 10 || p.y < -10 || p.y > H + 10) {
         particles[i] = spawn(); particles[i].age = 0; continue;
       }
-      var fade = Math.sin(Math.PI * p.age / p.life); // fade in and out
-      ctx.strokeStyle = 'rgba(' + rgb + ',' + (0.22 * fade).toFixed(3) + ')';
-      ctx.lineWidth = 1.2;
+      var fade = Math.sin(Math.PI * p.age / p.life); // fade in and out over a lifetime
+      ctx.strokeStyle = 'rgba(' + rgb + ',' + (0.55 * fade).toFixed(3) + ')';
       ctx.beginPath();
-      ctx.moveTo(x0 - v[0] * 6, y0 - v[1] * 6);
+      ctx.moveTo(x0, y0);
       ctx.lineTo(p.x, p.y);
       ctx.stroke();
     }
@@ -69,15 +75,19 @@
     raf = requestAnimationFrame(frame);
   }
 
-  resize();
-  window.addEventListener('resize', resize);
-
-  if (reduce) {
-    // Draw a single static frame.
-    for (var k = 0; k < 120; k++) { t++; particles.forEach(function (p) { var v = velocity(p.x, p.y); p.x += v[0]; p.y += v[1]; }); }
-    draw(color());
-    return;
+  // Reduced motion: render one still image of settled trails instead of animating.
+  function still() {
+    var rgb = color();
+    for (var k = 0; k < 160; k++) { t++; draw(rgb); }
   }
+
+  function onResize() { resize(); if (reduce) still(); }
+
+  resize();
+  if (window.ResizeObserver) new ResizeObserver(onResize).observe(canvas.parentElement);
+  else window.addEventListener('resize', onResize);
+
+  if (reduce) { still(); return; }
 
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) { cancelAnimationFrame(raf); raf = null; }

@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>
     (function () {
@@ -22,200 +22,170 @@
   </script>
 </head>
 <body>
-  <canvas id="field" aria-hidden="true"></canvas>
+  <main class="container">
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="nav-name" href="#top">Matthew Drnevich</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#publications">Papers</a>
-        <a href="#experience">Experience</a>
-        <a href="#potpourri">Potpourri</a>
+    <!-- Profile card -->
+    <header class="hero">
+      <div class="banner">
+        <canvas id="field" aria-hidden="true"></canvas>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
           <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
         </button>
+        <span class="banner-caption">u = &nabla;&times;&psi; &nbsp;&middot;&nbsp; a divergence-free flow, evolving</span>
       </div>
-    </div>
-  </nav>
-
-  <main id="top" class="container">
-
-    <!-- Header -->
-    <header class="hero">
-      <img class="avatar" src="assets/img/avatar.jpg" alt="Portrait of Matthew Drnevich" width="168" height="168">
-      <div class="hero-text">
-        <h1>Matthew Drnevich, Ph.D.</h1>
-        <p class="role">Consulting Applied AI Engineer &middot; <span class="org">Everpure</span></p>
-        <p class="tagline">Physicist turned applied AI engineer. I help organizations turn AI ambitions into production systems that hold up.</p>
-        <ul class="links">
-          <!-- <li><a href="mailto:">Email</a></li> -->
-          <li><a href="https://www.linkedin.com/in/matthew-drnevich">LinkedIn</a></li>
-          <li><a href="https://github.com/mdkdrnevich">GitHub</a></li>
-          <li><a href="https://scholar.google.com/citations?user=TmKyCWAAAAAJ&amp;hl=en">Scholar</a></li>
-        </ul>
-        <p class="meta">New York, NY</p>
+      <div class="profile">
+        <img class="avatar" src="assets/img/avatar.jpg" alt="Portrait of Matthew Drnevich" width="136" height="136">
+        <div class="profile-text">
+          <h1>Matthew Drnevich, Ph.D.</h1>
+          <p class="role">Consulting Applied AI Engineer &middot; <span class="org">Everpure</span></p>
+          <p class="tagline">Physicist turned applied AI engineer. I help organizations turn AI ambitions into production systems that hold up.</p>
+          <div class="profile-meta">
+            <ul class="links">
+              <!-- <li><a href="mailto:">Email</a></li> -->
+              <li><a href="https://www.linkedin.com/in/matthew-drnevich">LinkedIn</a></li>
+              <li><a href="https://github.com/mdkdrnevich">GitHub</a></li>
+              <li><a href="https://scholar.google.com/citations?user=TmKyCWAAAAAJ&amp;hl=en">Scholar</a></li>
+            </ul>
+            <span class="meta">New York, NY</span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- About -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm a Consulting Applied AI Engineer on <a href="https://www.everpuredata.com/">Everpure</a>'s Applied AI team.
-        I work with enterprise customers and partners to find high-value AI use cases, design end-to-end deployments,
-        and build proof-of-value prototypes that connect technical performance to business outcomes.
-      </p>
-      <p>
-        Before this, I spent six years as a research scientist on the <a href="https://atlas.cern/">ATLAS Collaboration</a> at CERN,
-        where I built probabilistic machine learning methods that went into production simulation workflows. They cut storage
-        by up to 95% and compute cost by up to 10<sup>9</sup>&times;. Most recently I was an AI Research Fellow at Root Access,
-        leading work on physics-informed generative models for 3D electromagnetic simulation.
-      </p>
-      <p>
-        I received my Ph.D. in Physics from <a href="https://physics.nyu.edu/">NYU</a>, advised by
-        <a href="https://theoryandpractice.org/">Kyle Cranmer</a>. I was also a visiting fellow at
-        <a href="https://www.helmholtz.ai/">Helmholtz AI</a> (DESY, Hamburg). Before that I studied physics and
-        mathematics at Notre Dame.
-      </p>
-    </section>
-
-    <!-- News -->
-    <section id="news">
-      <h2>News</h2>
-      <ul class="news">
-        <li><span class="date">Dec 2026</span><span>Joining <strong>Everpure</strong> as a Consulting Applied AI Engineer on the Applied AI team.</span></li>
-        <li><span class="date">Aug 2026</span><span>Started as an AI Research Fellow at Root Access, working on generative surrogates for EM simulation.</span></li>
-        <li><span class="date">May 2026</span><span>Completed my Ph.D. in Physics at NYU.</span></li>
-        <li><span class="date">Dec 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic density ratio estimation with a reverse engineered classification loss</a>.</span></li>
-        <li><span class="date">Oct 2025</span><span><a href="https://doi.org/10.1088/2632-2153/ae0def">Neural quasiprobabilistic likelihood ratio estimation</a> published in <em>Machine Learning: Science and Technology</em>.</span></li>
-        <li><span class="date">Oct 2023</span><span>Started a Helmholtz AI visiting research fellowship at DESY in Hamburg.</span></li>
-      </ul>
-    </section>
-
-    <!-- Focus areas -->
-    <section id="work">
-      <h2>What I work on</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>AI strategy &amp; discovery</h3>
-          <p>Turning open-ended problems into well-scoped ML solutions, and choosing the right tool for each one. Sometimes that's a frontier model and sometimes it's gradient-boosted trees.</p>
-        </article>
-        <article class="card">
-          <h3>Generative &amp; probabilistic modeling</h3>
-          <p>Normalizing flows, density-ratio estimation, simulation-based inference, and physics-informed generative surrogates for expensive simulators.</p>
-        </article>
-        <article class="card">
-          <h3>AI at scale</h3>
-          <p>GPU-accelerated PyTorch pipelines, distributed training, and HPC workflows (Slurm, HTCondor, GCP) running on large datasets.</p>
-        </article>
-        <article class="card">
-          <h3>Evaluation &amp; reliability</h3>
-          <p>Uncertainty quantification, distribution-shift detection, and statistical validation, so you know when a model can be trusted.</p>
-        </article>
+    <!-- 01 -->
+    <section id="hello">
+      <h2 class="label"><span class="idx">01</span>Hello</h2>
+      <div class="body">
+        <p>
+          I'm a Consulting Applied AI Engineer on <a href="https://www.everpuredata.com/">Everpure</a>'s Applied AI team.
+          I work with enterprise customers and partners to find high-value AI use cases, design end-to-end deployments,
+          and build proof-of-value prototypes that connect technical performance to business outcomes.
+        </p>
+        <p>
+          Before this, I spent six years as a research scientist on the <a href="https://atlas.cern/">ATLAS Collaboration</a> at CERN,
+          where I built probabilistic machine learning methods that went into production simulation workflows. They cut storage
+          by up to 95% and compute cost by up to 10<sup>9</sup>&times;. Most recently I was an AI Research Fellow at Root Access,
+          leading work on physics-informed generative models for 3D electromagnetic simulation.
+        </p>
+        <p>
+          I received my Ph.D. in Physics from <a href="https://physics.nyu.edu/">NYU</a>, advised by
+          <a href="https://theoryandpractice.org/">Kyle Cranmer</a>. I was also a visiting fellow at
+          <a href="https://www.helmholtz.ai/">Helmholtz AI</a> (DESY, Hamburg). Before that I studied physics and
+          mathematics at Notre Dame.
+        </p>
       </div>
+    </section>
 
-      <h3 class="subhead">Selected impact</h3>
-      <div class="stats">
-        <div class="stat"><span class="num">95%</span><span class="lbl">reduction in simulation storage requirements</span></div>
-        <div class="stat"><span class="num">10<sup>9</sup>&times;</span><span class="lbl">reduction in computing cost for production workflows</span></div>
-        <div class="stat"><span class="num">309&times;</span><span class="lbl">sample efficiency over conventional reweighting</span></div>
+    <!-- 02 -->
+    <section id="lately">
+      <h2 class="label"><span class="idx">02</span>Lately</h2>
+      <div class="body">
+        <ul class="news">
+          <li><span class="date">Dec 2026</span><span>Joining <strong>Everpure</strong> as a Consulting Applied AI Engineer on the Applied AI team.</span></li>
+          <li><span class="date">Aug 2026</span><span>Started as an AI Research Fellow at Root Access, working on generative surrogates for EM simulation.</span></li>
+          <li><span class="date">May 2026</span><span>Completed my Ph.D. in Physics at NYU.</span></li>
+          <li><span class="date">Dec 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic density ratio estimation with a reverse engineered classification loss</a>.</span></li>
+          <li><span class="date">Oct 2025</span><span><a href="https://doi.org/10.1088/2632-2153/ae0def">Neural quasiprobabilistic likelihood ratio estimation</a> published in <em>Machine Learning: Science and Technology</em>.</span></li>
+          <li><span class="date">Oct 2023</span><span>Started a Helmholtz AI visiting research fellowship at DESY in Hamburg.</span></li>
+        </ul>
       </div>
-      <p class="note">These are best-case results from integrating neural density-ratio estimation into ATLAS simulation workflows at CERN.</p>
     </section>
 
-    <!-- Publications -->
-    <section id="publications">
-      <h2>Selected publications</h2>
-      <ul class="pubs">
-        <li>
-          <a class="pub-title" href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic Density Ratio Estimation with a Reverse Engineered Classification Loss Function</a>
-          <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Kyle Cranmer</div>
-          <div class="venue">Preprint, under review at <em>Machine Learning: Science and Technology</em>, 2025</div>
-          <div class="pub-links"><a href="https://arxiv.org/abs/2512.19913">arXiv</a><a href="https://github.com/mdkdrnevich/QuasiDRE">code</a></div>
-        </li>
-        <li>
-          <a class="pub-title" href="https://doi.org/10.1088/2632-2153/ae0def">Neural Quasiprobabilistic Likelihood Ratio Estimation with Negatively Weighted Data</a>
-          <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Judith Katzy, Kyle Cranmer</div>
-          <div class="venue"><em>Machine Learning: Science and Technology</em>, 2025</div>
-          <div class="pub-links"><a href="https://doi.org/10.1088/2632-2153/ae0def">paper</a><a href="https://github.com/mdkdrnevich/QuasiSBI-Demo">demo</a></div>
-        </li>
-        <li>
-          <a class="pub-title" href="https://ml4physicalsciences.github.io/2022/">Exact Bayesian Inference with Tractable Generative Models for Jet Physics</a>
-          <div class="authors"><strong>Matthew Drnevich</strong>, Lauren Greenspan, Sebastian Macaluso, Kyle Cranmer, Duccio Pappadopulo</div>
-          <div class="venue">NeurIPS Workshop on Machine Learning and the Physical Sciences, 2022</div>
-          <div class="pub-links"><a href="https://ml4physicalsciences.github.io/2022/">workshop</a><a href="https://github.com/mdkdrnevich/ginkgo-inference">code</a></div>
-        </li>
-        <li>
-          <a class="pub-title" href="https://doi.org/10.1051/epjconf/202125103059">Reframing Jet Physics with New Computational Methods</a>
-          <div class="authors">Kyle Cranmer, <strong>Matthew Drnevich</strong>, Sebastian Macaluso, Duccio Pappadopulo</div>
-          <div class="venue">International Conference on Computing in High Energy and Nuclear Physics (vCHEP), 2021</div>
-          <div class="pub-links"><a href="https://doi.org/10.1051/epjconf/202125103059">paper</a></div>
-        </li>
-      </ul>
-      <p class="note">Full list on <a href="https://scholar.google.com/citations?user=TmKyCWAAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+    <!-- 03 -->
+    <section id="papers">
+      <h2 class="label"><span class="idx">03</span>Papers</h2>
+      <div class="body">
+        <ul class="pubs">
+          <li>
+            <a class="pub-title" href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic Density Ratio Estimation with a Reverse Engineered Classification Loss Function</a>
+            <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Kyle Cranmer</div>
+            <div class="venue">Preprint, under review at <em>Machine Learning: Science and Technology</em>, 2025</div>
+            <div class="pub-links"><a href="https://arxiv.org/abs/2512.19913">arXiv</a><a href="https://github.com/mdkdrnevich/QuasiDRE">code</a></div>
+          </li>
+          <li>
+            <a class="pub-title" href="https://doi.org/10.1088/2632-2153/ae0def">Neural Quasiprobabilistic Likelihood Ratio Estimation with Negatively Weighted Data</a>
+            <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Judith Katzy, Kyle Cranmer</div>
+            <div class="venue"><em>Machine Learning: Science and Technology</em>, 2025</div>
+            <div class="pub-links"><a href="https://doi.org/10.1088/2632-2153/ae0def">paper</a><a href="https://github.com/mdkdrnevich/QuasiSBI-Demo">demo</a></div>
+          </li>
+          <li>
+            <a class="pub-title" href="https://ml4physicalsciences.github.io/2022/">Exact Bayesian Inference with Tractable Generative Models for Jet Physics</a>
+            <div class="authors"><strong>Matthew Drnevich</strong>, Lauren Greenspan, Sebastian Macaluso, Kyle Cranmer, Duccio Pappadopulo</div>
+            <div class="venue">NeurIPS Workshop on Machine Learning and the Physical Sciences, 2022</div>
+            <div class="pub-links"><a href="https://ml4physicalsciences.github.io/2022/">workshop</a><a href="https://github.com/mdkdrnevich/ginkgo-inference">code</a></div>
+          </li>
+          <li>
+            <a class="pub-title" href="https://doi.org/10.1051/epjconf/202125103059">Reframing Jet Physics with New Computational Methods</a>
+            <div class="authors">Kyle Cranmer, <strong>Matthew Drnevich</strong>, Sebastian Macaluso, Duccio Pappadopulo</div>
+            <div class="venue">International Conference on Computing in High Energy and Nuclear Physics (vCHEP), 2021</div>
+            <div class="pub-links"><a href="https://doi.org/10.1051/epjconf/202125103059">paper</a></div>
+          </li>
+        </ul>
+        <p class="note">Full list on <a href="https://scholar.google.com/citations?user=TmKyCWAAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+      </div>
     </section>
 
-    <!-- Talks & projects -->
-    <section id="projects">
-      <h2>Talks &amp; projects</h2>
-      <ul class="projects">
-        <li>
-          <span class="p-title">Lorentz Flow for Jets</span>
-          <span class="p-desc">A normalizing flow that builds a rest-frame model of dijet constituents and boosts it with a Lorentz transformation, so the jet velocity can be fit by maximum likelihood.</span>
-          <a class="p-link" href="https://indico.cern.ch/event/809820/contributions/3632661/">ML4Jets 2020</a>
-        </li>
-        <li>
-          <span class="p-title">Ginkgo + Cluster Trellis</span>
-          <span class="p-desc">Tuning parton-shower parameters by exactly marginalizing over the (2N&minus;3)!! possible showering histories with a hierarchical cluster trellis.</span>
-          <a class="p-link" href="https://indico.cern.ch/event/980214/contributions/4413534/">ML4Jets 2021</a>
-        </li>
-        <li>
-          <span class="p-title">carl-torch</span>
-          <span class="p-desc">A PyTorch toolbox for multivariate reweighting of Monte Carlo simulation with classifier-based density ratios.</span>
-          <a class="p-link" href="https://github.com/mdkdrnevich/carl-torch">GitHub</a>
-        </li>
-        <li>
-          <span class="p-title">Deep Hadronic Top Tagger</span>
-          <span class="p-desc">A deep neural network for identifying hadronically decaying top quarks. It won Notre Dame's Outstanding Research Award.</span>
-          <a class="p-link" href="https://github.com/mdkdrnevich/DeepHadTopTagger">GitHub</a>
-        </li>
-      </ul>
+    <!-- 04 -->
+    <section id="talks">
+      <h2 class="label"><span class="idx">04</span>Talks &amp; code</h2>
+      <div class="body">
+        <ul class="projects">
+          <li>
+            <span class="p-title">Lorentz Flow for Jets</span>
+            <span class="p-desc">A normalizing flow that builds a rest-frame model of dijet constituents and boosts it with a Lorentz transformation, so the jet velocity can be fit by maximum likelihood.</span>
+            <a class="p-link" href="https://indico.cern.ch/event/809820/contributions/3632661/">ML4Jets 2020</a>
+          </li>
+          <li>
+            <span class="p-title">Ginkgo + Cluster Trellis</span>
+            <span class="p-desc">Tuning parton-shower parameters by exactly marginalizing over the (2N&minus;3)!! possible showering histories with a hierarchical cluster trellis.</span>
+            <a class="p-link" href="https://indico.cern.ch/event/980214/contributions/4413534/">ML4Jets 2021</a>
+          </li>
+          <li>
+            <span class="p-title">carl-torch</span>
+            <span class="p-desc">A PyTorch toolbox for multivariate reweighting of Monte Carlo simulation with classifier-based density ratios.</span>
+            <a class="p-link" href="https://github.com/mdkdrnevich/carl-torch">GitHub</a>
+          </li>
+          <li>
+            <span class="p-title">Deep Hadronic Top Tagger</span>
+            <span class="p-desc">A deep neural network for identifying hadronically decaying top quarks. It won Notre Dame's Outstanding Research Award.</span>
+            <a class="p-link" href="https://github.com/mdkdrnevich/DeepHadTopTagger">GitHub</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul class="timeline">
-        <li><span class="when">2026&ndash;</span><span class="what"><strong>Everpure</strong>, Consulting Applied AI Engineer</span></li>
-        <li><span class="when">2026</span><span class="what"><strong>Root Access</strong>, AI Research Fellow</span></li>
-        <li><span class="when">2020&ndash;2026</span><span class="what"><strong>ATLAS Collaboration, CERN</strong>, Research Scientist (Physics/ML)</span></li>
-        <li><span class="when">2023&ndash;2024</span><span class="what"><strong>Helmholtz AI (HiDA / DESY)</strong>, Visiting Research Fellow</span></li>
-        <li><span class="when">2017</span><span class="what"><strong>KPMG France / Loop Software</strong>, Algorithm Consultant</span></li>
-        <li><span class="when">2017</span><span class="what"><strong>NASA Glenn Research Center</strong>, Data Science &amp; Visualization Intern</span></li>
-      </ul>
-
-      <h3 class="subhead">Education</h3>
-      <ul class="timeline">
-        <li><span class="when">2019&ndash;2026</span><span class="what"><strong>New York University</strong>, Ph.D. in Physics<br><span class="sub">Thesis: <em>Computational Methods for Systematic Uncertainties and Quasiprobabilistic Modeling in High-Energy Physics</em></span></span></li>
-        <li><span class="when">2015&ndash;2019</span><span class="what"><strong>University of Notre Dame</strong>, B.S. Honors Physics &amp; B.S. Honors Mathematics<br><span class="sub">Phi Beta Kappa, Sorin Scholar, cum laude</span></span></li>
-      </ul>
+    <!-- 05 -->
+    <section id="path">
+      <h2 class="label"><span class="idx">05</span>The path so far</h2>
+      <div class="body">
+        <ol class="path">
+          <li><span class="when">2026&ndash;</span><span class="what"><strong>Everpure</strong>, Consulting Applied AI Engineer</span></li>
+          <li><span class="when">2026</span><span class="what"><strong>Root Access</strong>, AI Research Fellow</span></li>
+          <li><span class="when">2020&ndash;2026</span><span class="what"><strong>ATLAS Collaboration, CERN</strong>, Research Scientist (Physics/ML)</span></li>
+          <li><span class="when">2023&ndash;2024</span><span class="what"><strong>Helmholtz AI (HiDA / DESY)</strong>, Visiting Research Fellow</span></li>
+          <li><span class="when">2019&ndash;2026</span><span class="what"><strong>New York University</strong>, Ph.D. in Physics<br><span class="sub">Thesis: <em>Computational Methods for Systematic Uncertainties and Quasiprobabilistic Modeling in High-Energy Physics</em></span></span></li>
+          <li><span class="when">2017</span><span class="what"><strong>KPMG France / Loop Software</strong>, Algorithm Consultant</span></li>
+          <li><span class="when">2017</span><span class="what"><strong>NASA Glenn Research Center</strong>, Data Science &amp; Visualization Intern</span></li>
+          <li><span class="when">2015&ndash;2019</span><span class="what"><strong>University of Notre Dame</strong>, B.S. Honors Physics &amp; B.S. Honors Mathematics<br><span class="sub">Phi Beta Kappa, Sorin Scholar, cum laude</span></span></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Potpourri -->
-    <section id="potpourri">
-      <h2>Potpourri</h2>
-      <p>
-        Outside of work, I'm a hiker, an eager eater, a space advocate, and a lifelong Golden Domer. The background of this
-        page is a small nod to my research: particles drifting along a smooth flow field, the same picture behind the
-        normalizing flows I used to model jets.
-      </p>
-      <blockquote>
-        Be patient toward all that is unsolved in your heart and try to love the questions themselves.
-        <cite>Rainer Maria Rilke</cite>
-      </blockquote>
+    <!-- 06 -->
+    <section id="off-the-clock">
+      <h2 class="label"><span class="idx">06</span>Off the clock</h2>
+      <div class="body">
+        <p>
+          Outside of work, I'm a hiker, an eager eater, a space advocate, and a lifelong Golden Domer. The banner at the
+          top of this page is a small nod to my research: particles drifting along a smooth flow field, the same picture
+          behind the normalizing flows I used to model jets.
+        </p>
+        <blockquote>
+          Be patient toward all that is unsolved in your heart and try to love the questions themselves.
+          <cite>Rainer Maria Rilke</cite>
+        </blockquote>
+      </div>
     </section>
 
     <footer class="footer">
