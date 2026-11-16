@@ -201,20 +201,6 @@ section {
 }
 .pub-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
 
-/* Talks & code */
-.projects { list-style: none; padding: 0; margin: 0; }
-.projects li {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-areas: "title link" "desc desc";
-  gap: 2px 16px;
-  padding: 10px 0;
-}
-.projects li:first-child { padding-top: 0; }
-.p-title { grid-area: title; font-weight: 600; }
-.p-desc { grid-area: desc; color: var(--muted); font-size: .93rem; }
-.p-link { grid-area: link; font-family: var(--mono); font-size: .74rem; white-space: nowrap; padding-top: 3px; }
-
 /* The path so far: a vertical line with nodes */
 .path { list-style: none; padding: 0; margin: 0; position: relative; }
 .path::before {
