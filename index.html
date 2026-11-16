@@ -28,18 +28,25 @@
     <header class="hero">
       <div class="banner">
         <canvas id="field" aria-hidden="true"></canvas>
+        <nav class="page-nav" aria-label="Pages">
+          <a href="index.html" aria-current="page">Me</a>
+          <a href="work.html">Work</a>
+        </nav>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
           <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
         </button>
-        <span class="banner-caption">u = &nabla;&times;&psi; &nbsp;&middot;&nbsp; a divergence-free flow, evolving</span>
+        <blockquote class="banner-quote">
+          Be patient toward all that is unsolved in your heart and try to love the questions themselves.
+          <cite>Rainer Maria Rilke</cite>
+        </blockquote>
       </div>
       <div class="profile">
         <img class="avatar" src="assets/img/avatar.jpg" alt="Portrait of Matthew Drnevich" width="136" height="136">
         <div class="profile-text">
           <h1>Matthew Drnevich, Ph.D.</h1>
           <p class="role">Consulting Applied AI Engineer &middot; <span class="org">Everpure</span></p>
-          <p class="tagline">Physicist turned applied AI engineer. I help organizations turn AI ambitions into production systems that hold up.</p>
+          <p class="tagline">Recovering particle physicist. Now taking AI out of the lab and into the field.</p>
           <div class="profile-meta">
             <ul class="links">
               <!-- <li><a href="mailto:">Email</a></li> -->
@@ -73,82 +80,12 @@
           Before all that, I studied physics and math at Notre Dame, and spent a summer at NASA Glenn building tools for
           exploring scientific data.
         </p>
-        <p>
-          Ask me how physics has guided AI development, where I'm itching to travel next, or where to get the best bowl
-          of ramen in NYC.
-        </p>
       </div>
     </section>
 
     <!-- 02 -->
-    <section id="lately">
-      <h2 class="label"><span class="idx">02</span>Lately</h2>
-      <div class="body">
-        <ul class="news">
-          <li><span class="date">Dec 2026</span><span>Joining <strong>Everpure</strong> as a Consulting Applied AI Engineer on the Applied AI team.</span></li>
-          <li><span class="date">Aug 2026</span><span>Started as an AI Research Fellow at Root Access, working on generative surrogates for EM simulation.</span></li>
-          <li><span class="date">May 2026</span><span>Completed my Ph.D. in Physics at NYU.</span></li>
-          <li><span class="date">Dec 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic density ratio estimation with a reverse engineered classification loss</a>.</span></li>
-          <li><span class="date">Oct 2025</span><span><a href="https://doi.org/10.1088/2632-2153/ae0def">Neural quasiprobabilistic likelihood ratio estimation</a> published in <em>Machine Learning: Science and Technology</em>.</span></li>
-          <li><span class="date">Oct 2023</span><span>Started a Helmholtz AI visiting research fellowship at DESY in Hamburg.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 03 -->
-    <section id="papers">
-      <h2 class="label"><span class="idx">03</span>Papers</h2>
-      <div class="body">
-        <ul class="pubs">
-          <li>
-            <a class="pub-title" href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic Density Ratio Estimation with a Reverse Engineered Classification Loss Function</a>
-            <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Kyle Cranmer</div>
-            <div class="venue">Preprint, under review at <em>Machine Learning: Science and Technology</em>, 2025</div>
-            <div class="pub-links"><a href="https://arxiv.org/abs/2512.19913">arXiv</a><a href="https://github.com/mdkdrnevich/QuasiDRE">code</a></div>
-          </li>
-          <li>
-            <a class="pub-title" href="https://doi.org/10.1088/2632-2153/ae0def">Neural Quasiprobabilistic Likelihood Ratio Estimation with Negatively Weighted Data</a>
-            <div class="authors"><strong>Matthew Drnevich</strong>, Stephen Jiggins, Judith Katzy, Kyle Cranmer</div>
-            <div class="venue"><em>Machine Learning: Science and Technology</em>, 2025</div>
-            <div class="pub-links"><a href="https://doi.org/10.1088/2632-2153/ae0def">paper</a><a href="https://github.com/mdkdrnevich/QuasiSBI-Demo">demo</a></div>
-          </li>
-          <li>
-            <a class="pub-title" href="https://ml4physicalsciences.github.io/2022/">Exact Bayesian Inference with Tractable Generative Models for Jet Physics</a>
-            <div class="authors"><strong>Matthew Drnevich</strong>, Lauren Greenspan, Sebastian Macaluso, Kyle Cranmer, Duccio Pappadopulo</div>
-            <div class="venue">NeurIPS Workshop on Machine Learning and the Physical Sciences, 2022</div>
-            <div class="pub-links"><a href="https://ml4physicalsciences.github.io/2022/">workshop</a><a href="https://github.com/mdkdrnevich/ginkgo-inference">code</a></div>
-          </li>
-          <li>
-            <a class="pub-title" href="https://doi.org/10.1051/epjconf/202125103059">Reframing Jet Physics with New Computational Methods</a>
-            <div class="authors">Kyle Cranmer, <strong>Matthew Drnevich</strong>, Sebastian Macaluso, Duccio Pappadopulo</div>
-            <div class="venue">International Conference on Computing in High Energy and Nuclear Physics (vCHEP), 2021</div>
-            <div class="pub-links"><a href="https://doi.org/10.1051/epjconf/202125103059">paper</a></div>
-          </li>
-        </ul>
-        <p class="note">Full list on <a href="https://scholar.google.com/citations?user=TmKyCWAAAAAJ&amp;hl=en">Google Scholar</a>.</p>
-      </div>
-    </section>
-
-    <!-- 04 -->
-    <section id="path">
-      <h2 class="label"><span class="idx">04</span>The path so far</h2>
-      <div class="body">
-        <ol class="path">
-          <li><span class="when">2026&ndash;</span><span class="what"><strong>Everpure</strong>, Consulting Applied AI Engineer</span></li>
-          <li><span class="when">2026</span><span class="what"><strong>Root Access</strong>, AI Research Fellow</span></li>
-          <li><span class="when">2020&ndash;2026</span><span class="what"><strong>ATLAS Collaboration, CERN</strong>, Research Scientist (Physics/ML)</span></li>
-          <li><span class="when">2023&ndash;2024</span><span class="what"><strong>Helmholtz AI (HiDA / DESY)</strong>, Visiting Research Fellow</span></li>
-          <li><span class="when">2019&ndash;2026</span><span class="what"><strong>New York University</strong>, Ph.D. in Physics<br><span class="sub">Thesis: <em>Computational Methods for Systematic Uncertainties and Quasiprobabilistic Modeling in High-Energy Physics</em></span></span></li>
-          <li><span class="when">2017</span><span class="what"><strong>KPMG France / Loop Software</strong>, Algorithm Consultant</span></li>
-          <li><span class="when">2017</span><span class="what"><strong>NASA Glenn Research Center</strong>, Data Science &amp; Visualization Intern</span></li>
-          <li><span class="when">2015&ndash;2019</span><span class="what"><strong>University of Notre Dame</strong>, B.S. Honors Physics &amp; B.S. Honors Mathematics<br><span class="sub">Phi Beta Kappa, Sorin Scholar, cum laude</span></span></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 05 -->
     <section id="off-the-clock">
-      <h2 class="label"><span class="idx">05</span>Off the clock</h2>
+      <h2 class="label"><span class="idx">02</span>Off the clock</h2>
       <div class="body">
         <p>
           Away from work, I'm usually still thinking about physics, mostly the big, strange questions that pulled me into it
@@ -159,10 +96,26 @@
         <p>
           Physics taught me to ask how things work. Food and travel keep giving me new things to ask about.
         </p>
-        <blockquote>
-          Be patient toward all that is unsolved in your heart and try to love the questions themselves.
-          <cite>Rainer Maria Rilke</cite>
-        </blockquote>
+        <p>
+          Ask me how physics has guided AI development, where I'm itching to travel next, or where to get the best bowl
+          of ramen in NYC.
+        </p>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section id="lately">
+      <h2 class="label"><span class="idx">03</span>Lately</h2>
+      <div class="body">
+        <ul class="news">
+          <li><span class="date">Dec 2026</span><span>Joining <strong>Everpure</strong> as a Consulting Applied AI Engineer on the Applied AI team.</span></li>
+          <li><span class="date">Aug 2026</span><span>Started as an AI Research Fellow at Root Access, working on generative surrogates for EM simulation.</span></li>
+          <li><span class="date">May 2026</span><span>Completed my Ph.D. in Physics at NYU.</span></li>
+          <li><span class="date">Dec 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2512.19913">Quasiprobabilistic density ratio estimation with a reverse engineered classification loss</a>.</span></li>
+          <li><span class="date">Oct 2025</span><span><a href="https://doi.org/10.1088/2632-2153/ae0def">Neural quasiprobabilistic likelihood ratio estimation</a> published in <em>Machine Learning: Science and Technology</em>.</span></li>
+          <li><span class="date">Oct 2023</span><span>Started a Helmholtz AI visiting research fellowship at DESY in Hamburg.</span></li>
+        </ul>
+        <p class="note">Papers and the full path so far live on the <a href="work.html">work page</a>.</p>
       </div>
     </section>
 
